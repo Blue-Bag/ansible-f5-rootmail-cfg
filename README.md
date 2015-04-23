@@ -14,7 +14,9 @@ Although not required it is designed to work after the Exim4 role
 Role Variables
 --------------
 
-The only var beeded is the server from email (rootmail_server_from_email)
+The only vars needed are:
+ the server from email (rootmail_server_from_email) e.g.  ansible_hostname@example.com
+ the server domainname:  ((rootmail_server_mailname))  e.g. example.com
 
 Dependencies
 ------------
