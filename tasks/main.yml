@@ -1,0 +1,36 @@
+---
+# tasks file for ansible-rootmail-cfg
+
+- name: Set root mail alias
+  lineinfile: "dest=/etc/aliases
+              line='root: {{ rootmail_server_from_email }}'
+              state=present
+              backup=yes"
+  sudo: true
+  tags:
+    - configuration
+    - rootmail
+  notify:
+    - newaliases
+
+- name: Set root mail alias
+  lineinfile: "dest=/etc/email-addresses
+              line='root: {{ rootmail_server_from_email }}'
+              state=present
+              backup=yes"
+  sudo: true
+  tags:
+    - configuration
+    - rootmail
+  notify:
+    - restart exim4
+
+# set the mailname to a mail domain
+- name: Set system mailname
+  template: src=mailname.j2 dest=/etc/mailname
+  sudo: true
+  tags:
+    - configuration
+    - rootmail
+  notify:
+    - restart exim4
