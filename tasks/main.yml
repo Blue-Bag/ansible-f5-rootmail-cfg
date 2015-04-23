@@ -3,6 +3,7 @@
 
 - name: Set root mail alias
   lineinfile: "dest=/etc/aliases
+              regexp='^root:'
               line='root: {{ rootmail_server_from_email }}'
               state=present
               backup=yes"
