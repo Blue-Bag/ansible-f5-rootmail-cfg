@@ -30,7 +30,7 @@ Example Playbook
 
     - hosts: servers
       roles:
-         - { role: ansible-rootmail-cgf, tags; "mail", "configuration" }
+         - { role: ansible-role-first5rootmail, tags; "mail", "configuration" }
 
 License
 -------
