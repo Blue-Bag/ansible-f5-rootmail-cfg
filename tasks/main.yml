@@ -7,7 +7,7 @@
               line='root: {{ rootmail_server_from_email }}'
               state=present
               backup=yes"
-  sudo: true
+  become: true
   tags:
     - configuration
     - rootmail
@@ -19,7 +19,7 @@
               line='root: {{ rootmail_server_from_email }}'
               state=present
               backup=yes"
-  sudo: true
+  become: true
   tags:
     - configuration
     - rootmail
@@ -29,7 +29,7 @@
 # set the mailname to a mail domain
 - name: Set system mailname
   template: src=mailname.j2 dest=/etc/mailname
-  sudo: true
+  become: true
   tags:
     - configuration
     - rootmail
