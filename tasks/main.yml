@@ -2,11 +2,12 @@
 # tasks file for ansible-rootmail-cfg
 
 - name: Set root mail alias
-  lineinfile: "dest=/etc/aliases
-              regexp='^root:'
-              line='root: {{ rootmail_server_from_email }}'
-              state=present
-              backup=yes"
+  lineinfile:
+    dest: /etc/aliases
+    regexp: '^root:'
+    line: "root: {{ rootmail_server_from_email }}"
+    state: present
+    backup: yes
   become: true
   tags:
     - configuration
@@ -15,10 +16,11 @@
     - newaliases
 
 - name: Set root mail address
-  lineinfile: "dest=/etc/email-addresses
-              line='root: {{ rootmail_server_from_email }}'
-              state=present
-              backup=yes"
+  lineinfile:
+    dest: /etc/email-addresses
+    line: "root: {{ rootmail_server_from_email }}"
+    state: present
+    backup: yes
   become: true
   tags:
     - configuration
@@ -28,7 +30,9 @@
 
 # set the mailname to a mail domain
 - name: Set system mailname
-  template: src=mailname.j2 dest=/etc/mailname
+  template:
+    src: mailname.j2
+    dest: /etc/mailname
   become: true
   tags:
     - configuration
