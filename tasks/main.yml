@@ -1,6 +1,24 @@
 ---
 # tasks file for ansible-rootmail-cfg
 
+- name: Check for aliases file
+  stat: path=/etc/aliases
+  become: true
+  register: aliases_exist
+
+- name: Create aliases file if not present
+  template:
+    src: etc-aliases.j2
+    dest: /etc/aliases
+    owner: root
+    group: root
+    mode: 0644
+  become: true
+  when: aliases_exist.stat.exists == false
+  tags:
+    - configuration
+    - rootmail
+
 
 - name: Set root mail alias
   lineinfile:
