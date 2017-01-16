@@ -1,5 +1,8 @@
 ---
 - hosts: all
 
+  vars:
+    rootmail_server_from_email: 'tester@example.com'
+
   roles:
     - role_under_test
