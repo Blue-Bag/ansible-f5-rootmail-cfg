@@ -5,5 +5,5 @@
     rootmail_server_from_email: 'tester@example.com'
 
   roles:
-    - ansible-role-exim
+    - geerlingguy.exim
     - role_under_test
