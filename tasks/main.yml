@@ -39,7 +39,7 @@
     dest: /etc/email-addresses
     line: "root: {{ rootmail_server_from_email }}"
     state: present
-    backup: yes
+    backup: true
   become: true
   tags:
     - configuration

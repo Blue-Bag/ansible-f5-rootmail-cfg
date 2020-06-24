@@ -1,5 +1,5 @@
 ---
 # defaults file for ansible-rootmail-cfg
 
-#rootmail_server_from_email:  server@example.com
-#rootmail_server_mailname:  example.com
+# rootmail_server_from_email:  server@example.com
+# rootmail_server_mailname:  example.com

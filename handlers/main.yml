@@ -1,9 +1,11 @@
 ---
 # handlers file for ansible-rootmail-cfg
 
-  # Exim4
+# Exim4
 - name: restart exim4
-  action: service name=exim4 state=restarted
+  service:
+   name: exim4
+   state: restarted
   become: true
 
 - name: newaliases
