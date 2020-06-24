@@ -13,5 +13,5 @@
       changed_when: false
 
   roles:
-    - role: geerlingguy.exim
+    - role: geerlingguy.ansible-role-exim
     - role: ansible-role-first5rootmail
