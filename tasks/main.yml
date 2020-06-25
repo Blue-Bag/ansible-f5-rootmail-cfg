@@ -14,7 +14,7 @@
     group: root
     mode: 0644
   become: true
-  when: aliases_exist.stat.exists == false
+  when: not aliases_exist.stat.exists | bool
   tags:
     - configuration
     - rootmail
@@ -26,7 +26,7 @@
     regexp: '^root:'
     line: "root: {{ rootmail_server_from_email }}"
     state: present
-    backup: yes
+    backup: true
   become: true
   tags:
     - configuration
@@ -39,7 +39,7 @@
     dest: /etc/email-addresses
     line: "root: {{ rootmail_server_from_email }}"
     state: present
-    backup: yes
+    backup: true
   become: true
   tags:
     - configuration

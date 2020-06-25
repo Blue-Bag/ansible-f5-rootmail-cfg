@@ -1,0 +1,17 @@
+---
+- name: Converge
+  hosts: all
+  become: true
+
+  vars:
+    rootmail_server_from_email: 'tester@example.com'
+    rootmail_server_mailname: "example.com"
+  pre_tasks:
+    - name: Update apt cache.
+      apt: update_cache=true cache_valid_time=1200
+      when: ansible_os_family == 'Debian'
+      changed_when: false
+
+  roles:
+    - role: geerlingguy.exim
+    - role: ansible-role-first5rootmail
