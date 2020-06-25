@@ -1,3 +1,4 @@
-- name: ansible-role-exim
-  src: https://github.com/Blue-Bag/ansible-role-exim.git
-  version: master
+---
+- src: geerlingguy.exim
+
+#  src: https://github.com/Blue-Bag/ansible-role-exim.git
