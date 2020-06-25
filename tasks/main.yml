@@ -14,7 +14,7 @@
   notify:
     - newaliases
 
-- name: Set root mail alias
+- name: Set root mail address
   lineinfile: "dest=/etc/email-addresses
               line='root: {{ rootmail_server_from_email }}'
               state=present
