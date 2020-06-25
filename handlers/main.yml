@@ -4,8 +4,8 @@
   # Exim4
 - name: restart exim4
   action: service name=exim4 state=restarted
-  sudo: true
+  become: true
 
 - name: newaliases
   command: newaliases
-  sudo: true
+  become: true
