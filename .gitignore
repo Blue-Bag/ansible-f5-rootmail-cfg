@@ -8,7 +8,6 @@ docroot
 *.log
 *.tar
 *.pyc
-/common/files/ssl/*
 debugvars
 vm
 *.json
