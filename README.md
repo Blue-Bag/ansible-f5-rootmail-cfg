@@ -1,5 +1,6 @@
 Root Mail Configure
 ===================
+[![Build Status](https://travis-ci.org/Blue-Bag/ansible-role-first5rootmail.svg?branch=master)](https://travis-ci.org/Blue-Bag/ansible-role-first5rootmail)
 
 Originally part of our Exim 4 Role.
 This has been spun off to a configure role to keep Exim4 tight.
