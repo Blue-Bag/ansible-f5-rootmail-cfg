@@ -3,6 +3,7 @@
 
   vars:
     rootmail_server_from_email: 'tester@example.com'
+    rootmail_server_mailname: "example.com"
 
   roles:
     - geerlingguy.exim
